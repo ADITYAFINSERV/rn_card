@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: utm-redirector
+    runtime: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: DESTINATION_URL
+        value: "https://www.idfcfirstbank.com/credit-card/ntb-diy/apply?utm_source=Partner&utm_medium=Cards_Hub"
+      - key: CLICK_PREFIX
+        value: "Rn_card"
+      - key: DATABASE_URL
+        sync: false  # You must set this manually if you use Render PostgreSQL
